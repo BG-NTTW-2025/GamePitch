@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NTTW Pitch</title>
+  <style>
+    body {
+      background-color: #000;
+      color: white;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    #slideshow {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      height: 620px;
+      background-color: black;
+      margin-top: 1px;
+    }
+
+    #slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    #slideshow img.active {
+      opacity: 1;
+    }
+
+    #subtitle {
+      margin-top: 1px;
+      padding: 1px 1px;
+      font-size: 1.3rem;
+      max-width: 1200px;
+      text-align: center;
+      background-color: #111;
+      border-radius: 5px;
+      min-height: 3em;
+      /* line-height: 1.4;*/
+    }
+
+    audio {
+      margin-top: 1px;
+      width: 50%;
+      max-width: 600px;
+      outline: none;
+      border-radius: 1px;
+      background: #222;
+    }
+	
+	<style>
+  #screen-warning {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 220, 220, 0.95);
+    color: #a00;
+    font-size: 16px;
+    padding: 10px;
+    z-index: 9999;
+    text-align: center;
+    border-top: 2px solid #a00;
+  }
+
+  #screen-warning button {
+    margin-left: 15px;
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #a00;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+
+  </style>
+</head>
+<body>
+  <audio id="audio" controls>
+    <source src="pitch.mp3" type="audio/mpeg">
+    Je browser ondersteunt dit audio-element niet.
+  </audio>
+<div id="screen-warning">
+  ⚠️ Deze website is geoptimaliseerd voor schermen van minimaal 1200×720 pixels.
+  <br>
+  Tip: gebruik volledig scherm (F11 op de meeste browsers) voor de beste weergave.
+  <br>
+  <button onclick="hideWarning()">Toch doorgaan</button>
+</div>
+
+  <div id="slideshow">
+    <img src="dia00.jpg" id="slide0" class="active" alt="Dia 0">
+    <img src="dia01.jpg" id="slide1" alt="Dia 1">
+    <img src="dia02.jpg" id="slide2" alt="Dia 2">
+    <img src="dia03.jpg" id="slide3" alt="Dia 3">
+    <img src="dia04.jpg" id="slide4" alt="Dia 4">
+    <img src="dia05.jpg" id="slide5" alt="Dia 5">
+    <img src="dia06.jpg" id="slide6" alt="Dia 6">
+    <img src="dia07.jpg" id="slide7" alt="Dia 7">
+    <img src="dia08.jpg" id="slide8" alt="Dia 8">
+    <img src="dia09.jpg" id="slide9" alt="Dia 9">
+<img src="dia10.jpg" id="slide10" alt="Dia 10">
+<img src="dia11.jpg" id="slide11" alt="Dia 11">
+<img src="dia12.jpg" id="slide12" alt="Dia 12">
+<img src="dia13.jpg" id="slide13" alt="Dia 13">
+<img src="dia14.jpg" id="slide14" alt="Dia 14">
+<img src="dia15.jpg" id="slide15" alt="Dia 15">
+<img src="dia16.jpg" id="slide16" alt="Dia 16">
+<img src="dia17.jpg" id="slide17" alt="Dia 17">
+<img src="dia18.jpg" id="slide18" alt="Dia 18">
+<img src="dia19.jpg" id="slide19" alt="Dia 19">
+<img src="dia20.jpg" id="slide20" alt="Dia 20">
+<img src="dia21.jpg" id="slide21" alt="Dia 21">
+<img src="dia22.jpg" id="slide22" alt="Dia 22">
+<img src="dia23.jpg" id="slide23" alt="Dia 23">
+<img src="dia24.jpg" id="slide24" alt="Dia 24">
+<img src="dia25.jpg" id="slide25" alt="Dia 25">
+<img src="dia26.jpg" id="slide26" alt="Dia 26">
+<img src="dia27.jpg" id="slide27" alt="Dia 27">
+<img src="dia28.jpg" id="slide28" alt="Dia 28">
+<img src="dia29.jpg" id="slide29" alt="Dia 29">
+<img src="dia30.jpg" id="slide30" alt="Dia 30">
+<img src="dia31.jpg" id="slide31" alt="Dia 31">
+<img src="dia32.jpg" id="slide32" alt="Dia 32">
+<img src="dia33.jpg" id="slide33" alt="Dia 33">
+<img src="dia34.jpg" id="slide34" alt="Dia 34">
+<img src="dia35.jpg" id="slide35" alt="Dia 35">
+<img src="dia36.jpg" id="slide36" alt="Dia 36">
+<img src="dia37.jpg" id="slide37" alt="Dia 37">
+<img src="dia38.jpg" id="slide38" alt="Dia 38">
+<img src="dia39.jpg" id="slide39" alt="Dia 39">
+<img src="dia40.jpg" id="slide40" alt="Dia 40">
+<img src="dia41.jpg" id="slide41" alt="Dia 41">
+<img src="dia42.jpg" id="slide42" alt="Dia 42">
+<img src="dia43.jpg" id="slide43" alt="Dia 43">
+  </div>
+
+  <div id="subtitle">[Ondertiteling komt hier]</div>
+
+  <script>
+    const audio = document.getElementById("audio");
+    const slides = document.querySelectorAll("#slideshow img");
+    const subtitle = document.getElementById("subtitle");
+
+    const script = [
+{ start: 0, end: 0, text: "",slide: 0 },	
+{ start: 0, end: 5, text: "Nu volgt een overzicht van de spelonderdelen van No Time To Waste.",slide: 1 },
+{ start: 5, end: 10, text: "Het speelbord bestaat uit 400 verzonken cellen die een droog landschap voorstellen.",slide: 2 },
+{ start: 10, end: 15, text: "Langs de rand van het bord liggen coördinatiestroken in de kleur van de spelers. ",slide: 3 },
+{ start: 15, end: 20, text: "Deze genummerde stroken helpen bij het bepalen van de posities.",slide: 3 },
+{ start: 20, end: 27, text: "NTTW wordt gespeeld met 4 gekleurde pionnen en is geschikt voor 2 tot 4 spelers. ",slide: 4 },
+{ start: 27, end: 33, text: "Je kunt ook met teams spelen of solo, bijvoorbeeld met een beurten- of tijdslimiet.",slide: 4 },
+{ start: 33, end: 38, text: "Elke speler krijgt een start- en finish-structure in zijn kleur.",slide: 5 },
+{ start: 38, end: 43, text: "Er zijn 6 dobbelstenen: 5 D4-stenen en 1 D6-steen.",slide: 6 },
+{ start: 43, end: 47, text: "De D4-stenen worden aan het begin van elke beurt gegooid ",slide: 6 },
+{ start: 47, end: 52, text: "om te bepalen welke positie onder water gezet moet worden.",slide: 6 },
+{ start: 52, end: 60, text: "De D6-steen toont: een Terp, een Polder, een Gemaal, een Brug, een Bijl en een Zwemvest.",slide: 7 },
+{ start: 60, end: 66, text: "Deze steen kan in plaats van een gewone pionverplaatsing worden ingezet.",slide: 7 },
+{ start: 66, end: 69, text: "Het spel bevat zes soorten structures. ",slide: 8 },
+{ start: 69, end: 75, text: "Vijf daarvan zijn waterbeheer-structures die posities begaanbaar houden of beschermen. ",slide: 8 },
+{ start: 75, end: 77, text: "De zesde is de water-structure. ",slide: 8 },
+{ start: 77, end: 82, text: "Deze wordt geplaatst op de positie bepaald door de D4-uitkomst",slide: 8 },
+{ start: 82, end: 86, text: "en maakt die cel zonder hulpmiddelen onbegaanbaar.",slide: 8 },
+{ start: 86, end: 89, text: "Er zijn in totaal 76 speelkaarten. ",slide: 9 },
+{ start: 89, end: 93, text: "Vooraf wordt er bepaald na hoeveel beurten elke speler een kaart krijgt,",slide: 9 },
+{ start: 93, end: 96, text: "bijvoorbeeld elke vijfde beurt.",slide: 9 },
+{ start: 96, end: 99, text: "De kaarten zijn verdeeld in vier categorieën:",slide: 10 },
+{ start: 99, end: 102, text: "8 waterbeheersingskaarten (elk 4x), ",slide: 11 },
+{ start: 102, end: 105, text: "om posities droog te leggen of overbrugbaar te maken.",slide: 11 },
+{ start: 105, end: 109, text: "7 actiekaarten (elk 4x), ",slide: 12 },
+{ start: 109, end: 112, text: "met opdrachten die meteen uitgevoerd moeten worden. ",slide: 12 },
+{ start: 112, end: 116, text: "Deze beïnvloeden het spelverloop positief of negatief.",slide: 12 },
+{ start: 116, end: 119, text: "Deze twee categorieën worden standaard gebruikt.",slide: 12 },
+{ start: 119, end: 122, text: "Categorie 3 en 4 zijn optioneel. ",slide: 13 },
+{ start: 122, end: 125, text: "Ze veranderen het spelverloop ingrijpend en ",slide: 13 },
+{ start: 125, end: 129, text: "worden bij een eerste kennismaking met het spel meestal weggelaten.",slide: 13 },
+{ start: 129, end: 132, text: "Categorie 3: 4 natuurrampkaarten. ",slide: 14 },
+{ start: 132, end: 137, text: "De opdrachten gelden voor alle spelers tegelijk en hebben grote impact.",slide: 14 },
+{ start: 137, end: 142, text: "Categorie 4: 3 verschillende conflictkaarten (elk 4x). ",slide: 15 },
+{ start: 142, end: 146, text: "Deze kaarten zijn bedoeld om tegenstanders op achterstand te zetten. ",slide: 15 },
+{ start: 146, end: 151, text: "Ook deze kaarten hebben een grote invloed op het spelverloop.",slide: 15 },
+{ start: 151, end: 154, text: "Tot slot zijn er twee ondersteunende hulpmiddelen:",slide: 16 },
+{ start: 154, end: 158, text: "De kaartuitgifterondeteller, om bij te houden wanneer kaarten uitgedeeld worden. ",slide: 16 },
+{ start: 158, end: 161, text: "Hiervoor is ook een app beschikbaar.",slide: 17 },
+{ start: 161, end: 163, text: "De structure-extractor, ",slide: 16 },
+{ start: 163, end: 168, text: "een zuigbuisje om geplaatste structures gemakkelijk van het bord te verwijderen.",slide: 16 },
+{ start: 168, end: 170, text: "Dan nu de spelvoorbereiding.",slide: 18 },
+{ start: 170, end: 174, text: "De start-structures worden symmetrisch over het bord verdeeld. ",slide: 18 },
+{ start: 174, end: 178, text: "Voor elke speler liggen start en finish op een vergelijkbare positie ",slide: 18 },
+{ start: 178, end: 183, text: "ten opzichte van zijn kijkrichting. De coördinatiestroken helpen hierbij.",slide: 18 },
+{ start: 183, end: 187, text: "In dit voorbeeld is positie nul gekozen als start.",slide: 19 },
+{ start: 187, end: 192, text: "Elke speler plaatst zijn start op zijn eigen positie nul.",slide: 19 },
+{ start: 192, end: 200, text: "De finish komt op positie 398. Elke speler plaatst zijn finish op zijn positie 398.",slide: 20 },
+{ start: 200, end: 204, text: "Er kunnen ook andere start- en finishposities afgesproken worden, ",slide: 21 },
+{ start: 204, end: 207, text: "wat invloed kan hebben op de duur van het spel.",slide: 21 },
+{ start: 207, end: 213, text: "Beslis welke kaarten worden gebruikt en leg ze in een stapel naast het bord.",slide: 22 },
+{ start: 213, end: 216, text: "Bepaal hoe vaak kaarten uitgedeeld worden.",slide: 22 },
+{ start: 216, end: 219, text: "Gebruikte kaarten gaan op een reservestapel.",slide: 22 },
+{ start: 219, end: 225, text: "Is de originele stapel op, dan wordt de reservestapel geschud en opnieuw gebruikt.",slide: 23 },
+{ start: 225, end: 231, text: "Zijn de kaarten geschud en liggen alle onderdelen klaar, dan kan het spel beginnen.",slide: 24 },
+{ start: 231, end: 237, text: "Ronde 1: Speler 1 gooit de 5, D4 dobbelstenen.",slide: 25 },
+{ start: 237, end: 241, text: "Met de uitkomst moet een geldige positie worden gevormd.",slide: 25 },
+{ start: 241, end: 245, text: "– De gele steen bepaalt het honderdtal: 0 t/m 3.",slide: 26 },
+{ start: 245, end: 248, text: "– Voor de tientallen gebruik je 1 of 2 blauwe stenen.",slide: 27 },
+{ start: 248, end: 252, text: "– Je mag ze optellen, aftrekken of één steen negeren.",slide: 27 },
+{ start: 252, end: 255, text: "Voor de eenheden gebruik je de groene stenen.",slide: 28 },
+{ start: 255, end: 258, text: "Hier gelden dezelfde regels als bij de blauwe.",slide: 28 },
+{ start: 258, end: 264, text: "De som van de blauwe en groene stenen mag nooit minder dan nul en meer dan negen zijn.",slide: 29 },
+{ start: 264, end: 271, text: "Voor wie rekenen lastig vindt is er een app die de worp simuleert en mogelijke uitkomsten toont.",slide: 30 },
+{ start: 271, end: 274, text: "Lukt het niet om een geldige positie te vormen, ",slide: 29 },
+{ start: 274, end: 280, text: "dan vervalt de beurt direct zonder dat de pion verplaatst mag worden.",slide: 29 },
+{ start: 280, end: 286, text: "Is er een positie onderwater gezet, dan mag de speler één pion één positie verplaatsen. ",slide: 31 },
+{ start: 286, end: 291, text: "De eerste verplaatsing van een pion is altijd naar zijn startpositie.",slide: 32 },
+{ start: 291, end: 297, text: "Een voorbeeld in beurt 1: Rood zet positie 204 onder water.",slide: 33 },
+{ start: 297, end: 304, text: "Hij negeert de blauwe 8 en groene 3. Met honderdtal 2 levert dit positie 204 op. ",slide: 33 },
+{ start: 304, end: 307, text: "Nu mag rood een pion verplaatsen.",slide: 34 },
+{ start: 307, end: 311, text: "Ronde 5: tijd voor een kaartuitgifte.",slide: 35 },
+{ start: 311, end: 315, text: "In de afgesproken rondes krijgt elke speler een kaart. ",slide: 36 },
+{ start: 315, end: 322, text: "Waterbeheersingskaarten en Conflictkaarten mogen bewaard worden en ingezet worden in een volgende beurt. ",slide: 36 },
+{ start: 322, end: 328, text: "Actiekaarten en natuurrampkaarten dienen in de ronde van ontvangst uitgevoerd te worden.",slide: 37 },
+{ start: 328, end: 333, text: "Het doel van het spel is: Krijg al je pionnen als eerste aan de finish.",slide: 37 },
+{ start: 333, end: 339, text: "Het is ook mogelijk om coöperatief te spelen: niemand wint, tenzij iedereen finisht.",slide: 38 },
+{ start: 339, end: 342, text: "Heeft NTTW uw interesse gewekt?",slide: 39 },
+{ start: 342, end: 347, text: "Bij deze pitch is aanvullend materiaal meegestuurd met uitgebreide uitleg over ",slide: 39 },
+{ start: 347, end: 353, text: "de spelregels, kaarten, pionverplaatsing en dobbelsteenmechaniek.",slide: 39 },
+{ start: 353, end: 359, text: "Daarnaast vindt u in het pakket de volledige handleiding, een handige Quick Card,",slide: 40 },
+{ start: 359, end: 364, text: "apps die het dobbelsteenproces en kaartuitgifte digitaal ondersteunen ",slide: 41 },
+{ start: 364, end: 369, text: "en tevens een digitale simulatie uitvoering van NTTW. ",slide: 42 },
+{ start: 369, end: 380, text: "Bedankt voor uw aandacht.",slide: 43 },
+
+    ];
+
+    function updateDisplay() {
+      const currentTime = audio.currentTime;
+      for (let i = 0; i < script.length; i++) {
+        const { start, end, text, slide } = script[i];
+        if (currentTime >= start && currentTime < end) {
+          subtitle.innerHTML = text;
+          slides.forEach((img, idx) => {
+            img.classList.toggle("active", idx === slide);
+          });
+          break;
+        }
+      }
+    }
+
+    audio.addEventListener("timeupdate", updateDisplay);
+  </script>
+
+
+<script>
+  let warningDismissed = false;
+
+  function checkScreenSize() {
+    const warning = document.getElementById("screen-warning");
+
+    if (!warningDismissed && (window.innerWidth < 1200 || window.innerHeight < 720)) {
+      warning.style.display = "block";
+    } else {
+      warning.style.display = "none";
+    }
+  }
+
+  function hideWarning() {
+    warningDismissed = true;
+    document.getElementById("screen-warning").style.display = "none";
+  }
+
+  checkScreenSize();
+  window.addEventListener("resize", checkScreenSize);
+</script>
+
+</body>
+</html>
